@@ -1,0 +1,40 @@
+column,source_data_type,description
+months_as_customer,int64,Number of months the customer has been with the insurer.
+age,int64,Age of the insured person.
+policy_number,int64,Policy identifier.
+policy_bind_date,object,Date the policy was bound.
+policy_state,object,State associated with the policy.
+policy_csl,object,Combined single-limit policy category.
+policy_deductable,int64,Policy deductible amount.
+policy_annual_premium,float64,Annual policy premium.
+umbrella_limit,int64,Umbrella insurance limit.
+insured_zip,int64,ZIP/postal code of the insured.
+insured_sex,object,Recorded sex category of the insured.
+insured_education_level,object,Education level of the insured.
+insured_occupation,object,Occupation of the insured.
+insured_hobbies,object,Recorded hobby of the insured.
+insured_relationship,object,Relationship category of the insured.
+capital-gains,int64,Capital gains value.
+capital-loss,int64,Capital loss value.
+incident_date,object,Date the incident occurred.
+incident_type,object,Type of incident.
+collision_type,object,Collision type; ? appears as an unknown placeholder.
+incident_severity,object,Severity classification of the incident.
+authorities_contacted,object,Authority contacted; includes blank values.
+incident_state,object,State where the incident occurred.
+incident_city,object,City where the incident occurred.
+incident_location,object,Location description of the incident.
+incident_hour_of_the_day,int64,Hour of day when the incident occurred.
+number_of_vehicles_involved,int64,Number of vehicles involved.
+property_damage,object,Property damage indicator; ? appears as an unknown placeholder.
+bodily_injuries,int64,Number of bodily injuries.
+witnesses,int64,Number of witnesses.
+police_report_available,object,Police report availability; ? appears as an unknown placeholder.
+total_claim_amount,int64,Total claim amount.
+injury_claim,int64,Injury component of the claim amount.
+property_claim,int64,Property component of the claim amount.
+vehicle_claim,int64,Vehicle component of the claim amount.
+auto_make,object,Vehicle manufacturer.
+auto_model,object,Vehicle model.
+auto_year,int64,Vehicle model year.
+fraud_reported,object,"Fraud label: Y = fraudulent, N = non-fraud."

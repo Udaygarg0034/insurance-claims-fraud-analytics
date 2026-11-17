@@ -1,0 +1,56 @@
+-- Table name: InsuranceClaims
+-- Source fraud_reported values are Y (fraud) and N (non-fraud).
+
+Total Claims =
+COUNTROWS(InsuranceClaims)
+
+Total Claim Amount =
+SUM(InsuranceClaims[total_claim_amount])
+
+Average Claim Amount =
+AVERAGE(InsuranceClaims[total_claim_amount])
+
+Fraudulent Claims =
+CALCULATE(
+    COUNTROWS(InsuranceClaims),
+    InsuranceClaims[fraud_reported] = "Y"
+)
+
+Fraud Percentage =
+DIVIDE(
+    [Fraudulent Claims],
+    [Total Claims],
+    0
+)
+
+Non Fraud Claims =
+CALCULATE(
+    COUNTROWS(InsuranceClaims),
+    InsuranceClaims[fraud_reported] = "N"
+)
+
+Non Fraud Percentage =
+DIVIDE(
+    [Non Fraud Claims],
+    [Total Claims],
+    0
+)
+
+-- Calculated columns
+Fraud Status =
+SWITCH(
+    InsuranceClaims[fraud_reported],
+    "Y", "Fraud",
+    "N", "Non-Fraud",
+    "Unknown"
+)
+
+Claim Month =
+FORMAT(InsuranceClaims[incident_date], "MMMM")
+
+Month Sort =
+MONTH(InsuranceClaims[incident_date])
+
+-- After creating Claim Month, select it and use:
+-- Column tools > Sort by column > Month Sort.
+-- Format Fraud Percentage and Non Fraud Percentage as Percentage.
